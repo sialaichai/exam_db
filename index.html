@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prelim Physics Viewer</title>
+    <title>Prelim Chew Viewer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js?v=1.0.1"></script>
 	<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <style>
@@ -181,8 +181,7 @@
 <button id="merge-pdf-btn" style="background-color: #007bff; color: white; padding: 8px 12px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 14px;">PDFs</button>
                 <span id="file-count-display"></span>
                 
-                <a href="https://sialaichai.github.io/physics9702/" class="nav-link" style="margin-left:auto;">9702</a>
-                <a href="https://sialaichai.github.io/physicsseab/" class="nav-link">SEAB</a>
+              
             </div>
             <div id="pdf-viewer-container"><iframe id="pdf-viewer" src="" frameborder="0"></iframe></div>
         </div>
@@ -508,7 +507,7 @@
                     const blob = new Blob([pdfBytes], { type: 'application/pdf' });
                     const link = document.createElement('a');
                     link.href = URL.createObjectURL(blob);
-                    link.download = `merged_physics_linear_${new Date().toISOString().slice(0,10)}.pdf`;
+                    link.download = `merged_pdf_linear_${new Date().toISOString().slice(0,10)}.pdf`;
                     link.click();
 
                 } catch (err) {
