@@ -478,10 +478,11 @@
                         if (!res.ok) { console.error(`Failed to fetch ${fname}`); continue; }
                         const existingPdfBytes = await res.arrayBuffer();
 
-                        // Load the source PDF
-                                              
-                        // --- MODIFIED: Overlay filename directly on each page ---
-                        const pages = sourcePdf.getPages();
+					      // ⚠️ Variable name: sourcePdf (camelCase, lowercase 'd')
+					    const sourcePdf = await PDFDocument.load(existingPdfBytes);
+					    
+					    // --- MODIFIED: Overlay filename directly on each page ---
+					    const pages = sourcePdf.getPages(); // ✅ lowercase 'd'
                         
                         for (const page of pages) {
                             const { height } = page.getSize();
